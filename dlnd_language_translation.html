@@ -13912,7 +13912,7 @@ Model Trained and Saved
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sentence_to_seq</span><span class="p">(</span><span class="n">sentence</span><span class="p">,</span> <span class="n">vocab_to_int</span><span class="p">):</span>
@@ -13923,7 +13923,7 @@ Model Trained and Saved
 <span class="sd">    :return: List of word ids</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">seq</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">sentence_split</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">sentence_split</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">sentence_split</span><span class="p">:</span>
         <span class="n">i</span> <span class="o">=</span> <span class="n">vocab_to_int</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">word</span><span class="p">,</span><span class="n">vocab_to_int</span><span class="p">[</span><span class="s1">&#39;&lt;UNK&gt;&#39;</span><span class="p">])</span>
         <span class="n">seq</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -13969,10 +13969,10 @@ Model Trained and Saved
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">translate_sentence</span> <span class="o">=</span> <span class="s1">&#39;Your least liked fruit is the apple , but his least liked is grape .&#39;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">translate_sentence</span> <span class="o">=</span> <span class="s1">&#39;most liked fruit is a apple .&#39;</span>
 
 
 <span class="sd">&quot;&quot;&quot;</span>
@@ -14014,12 +14014,12 @@ Model Trained and Saved
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Input
-  Word Ids:      [2, 77, 168, 31, 144, 4, 213, 187, 129, 87, 77, 168, 144, 202, 114]
-  English Words: [&#39;&lt;UNK&gt;&#39;, &#39;least&#39;, &#39;liked&#39;, &#39;fruit&#39;, &#39;is&#39;, &#39;the&#39;, &#39;apple&#39;, &#39;,&#39;, &#39;but&#39;, &#39;his&#39;, &#39;least&#39;, &#39;liked&#39;, &#39;is&#39;, &#39;grape&#39;, &#39;.&#39;]
+  Word Ids:      [173, 168, 31, 144, 141, 213, 114]
+  English Words: [&#39;most&#39;, &#39;liked&#39;, &#39;fruit&#39;, &#39;is&#39;, &#39;a&#39;, &#39;apple&#39;, &#39;.&#39;]
 
 Prediction
-  Word Ids:      [310, 346, 252, 136, 245, 302, 267, 247, 137, 119, 252, 233, 252, 302, 246, 46, 1]
-  French Words: [&#39;new&#39;, &#39;états-unis&#39;, &#39;est&#39;, &#39;jamais&#39;, &#39;occupé&#39;, &#39;en&#39;, &#39;février&#39;, &#39;,&#39;, &#39;mais&#39;, &#39;il&#39;, &#39;est&#39;, &#39;parfois&#39;, &#39;est&#39;, &#39;en&#39;, &#39;avril&#39;, &#39;.&#39;, &#39;&lt;EOS&gt;&#39;]
+  Word Ids:      [88, 11, 251, 251, 252, 255, 212, 46, 1]
+  French Words: [&#39;votre&#39;, &#39;fruit&#39;, &#39;moins&#39;, &#39;moins&#39;, &#39;est&#39;, &#39;la&#39;, &#39;pomme&#39;, &#39;.&#39;, &#39;&lt;EOS&gt;&#39;]
 </pre>
 </div>
 </div>
